@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /dashboard.html
+
+Sitemap: https://medowaled.github.io/best-tours-benha/sitemap.xml

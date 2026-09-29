@@ -89,18 +89,33 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Mobile Menu Toggle
+  // Mobile Menu Toggle with Smooth Drawer
   if (mobileMenuToggle && navMenu) {
-    mobileMenuToggle.addEventListener('click', () => {
-      const isVisible = navMenu.style.display === 'flex';
-      navMenu.style.display = isVisible ? 'none' : 'flex';
-      navMenu.style.flexDirection = 'column';
-      navMenu.style.position = 'absolute';
-      navMenu.style.top = '80px';
-      navMenu.style.left = '0';
-      navMenu.style.width = '100%';
-      navMenu.style.background = 'var(--navy-deep)';
-      navMenu.style.padding = '1.5rem';
+    mobileMenuToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isActive = navMenu.classList.toggle('is-active');
+      const icon = mobileMenuToggle.querySelector('i');
+      if (icon) {
+        icon.className = isActive ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
+      }
+    });
+
+    // Close menu when clicking any nav link
+    navMenu.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('is-active');
+        const icon = mobileMenuToggle.querySelector('i');
+        if (icon) icon.className = 'fa-solid fa-bars';
+      });
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (navMenu.classList.contains('is-active') && !navMenu.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
+        navMenu.classList.remove('is-active');
+        const icon = mobileMenuToggle.querySelector('i');
+        if (icon) icon.className = 'fa-solid fa-bars';
+      }
     });
   }
 
