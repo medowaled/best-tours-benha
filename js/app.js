@@ -683,7 +683,10 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Initial renders
-  updateLanguage(currentLang);
+  renderDestinations(currentCategory);
+  renderOffers();
+  renderVisas();
+  renderUmrah();
   initAdminSecretEntrance();
 
   // Cloud Hydration for Visitors
