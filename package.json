@@ -1,0 +1,24 @@
+{
+  "name": "best-tours-benha",
+  "version": "1.0.0",
+  "description": "Best Tours Benha - Digital Travel Experience (HTML, CSS, JS)",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx -y serve . -p 3000",
+    "start": "npx -y serve . -p 3000",
+    "build": "echo \"Vanilla HTML/CSS/JS is production ready. Ready for deployment on Vercel, Netlify, or Apache/Nginx.\"",
+    "preview": "npx -y serve . -p 8080"
+  },
+  "keywords": [
+    "travel",
+    "umrah",
+    "hajj",
+    "visas",
+    "flights",
+    "benha",
+    "tourism",
+    "egypt"
+  ],
+  "author": "Best Tours Benha",
+  "license": "MIT"
+}

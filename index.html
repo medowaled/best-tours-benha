@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>بست تورز بنها | بوابة السفر الرقمية الفاخرة - الحج والعمرة، التأشيرات، الطيران والسياحة</title>
+  <meta name="description"
+    content="شركة بست تورز بنها للسياحة والرحلات. بوابتك الأولى لرحلات الحج والعمرة الفاخرة، استخراج التأشيرات، حجز تذاكر الطيران وبكجات السفر الداخلي والخارجي بأعلى معايير الجودة والمصداقية.">
+  <meta name="keywords"
+    content="بست تورز بنها, عمرة بنها, حج بنها, تأشيرات بنها, طيران بنها, سياحة داخلية, رحلات شرم والشيخ والغردقة">
+
+  <!-- Open Graph / Meta -->
+  <meta property="og:title" content="بست تورز بنha | Digital Luxury Travel Experience">
+  <meta property="og:description" content="برامج الحج والعمرة، التأشيرات، وتذاكر الطيران بمدينة بنها.">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon / Icons -->
+  <link rel="icon" type="image/png" href="assets/images/logo.png">
+  <link rel="apple-touch-icon" href="assets/images/logo.png">
+
+  <!-- Font Awesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <!-- ==========================================================================
+       Main Sticky Header / Navbar
+       ========================================================================== -->
+  <header id="navbar" class="navbar">
+    <div class="container nav-container">
+      <a href="#hero" class="brand-logo" aria-label="Best Tours Benha Home">
+        <img src="assets/images/logo.png" alt="Best Tours Benha Logo" class="brand-logo-img">
+        <div class="logo-text">
+          <h1>بست تورز <span>بنها</span></h1>
+        </div>
+      </a>
+
+      <nav id="nav-menu" class="nav-menu" aria-label="Primary Navigation">
+        <a href="index.html" class="nav-link active">الرئيسية</a>
+        <a href="services.html" class="nav-link">خدماتنا</a>
+        <a href="trips.html" class="nav-link">اختر رحلتك</a>
+        <a href="umrah.html" class="nav-link">الحج والعمرة</a>
+        <a href="visas.html" class="nav-link">التأشيرات</a>
+        <a href="offers.html" class="nav-link">العروض الخاصة</a>
+        <a href="why-us.html" class="nav-link">لماذا نحن</a>
+        <a href="testimonials.html" class="nav-link">آراء العملاء</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="tel:01028589888" class="top-info-item nav-phone-link"
+          style="color: var(--gold-light); font-weight: 700; text-decoration: none;">
+          <span dir="ltr">01028589888</span>
+        </a>
+        <button id="lang-toggle-btn" class="lang-switch-btn" aria-label="Toggle Language">
+          English
+        </button>
+        <button class="btn btn-gold btn-sm open-general-inquiry" id="nav-inquire-btn">
+          <span>حجز واستشارة</span>
+        </button>
+        <button class="mobile-toggle" id="mobile-menu-toggle" aria-label="Open navigation menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ==========================================================================
+         Section 1: Hero Section with Glassmorphic Search Bar
+         ========================================================================== -->
+    <section id="hero" class="hero-section">
+      <!-- Background Video of Makkah / Kaaba & Pilgrims -->
+      <div class="hero-video-wrapper">
+        <video id="hero-video" class="hero-bg-video" autoplay muted loop playsinline preload="auto"
+          poster="https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?auto=format&fit=crop&w=1920&q=80">
+          <source
+            src="https://upload.wikimedia.org/wikipedia/commons/transcoded/3/30/Tawaf_Ifadha_2016_with_Amm_Salim.webm/Tawaf_Ifadha_2016_with_Amm_Salim.webm.480p.vp9.webm"
+            type="video/webm">
+          <source
+            src="https://upload.wikimedia.org/wikipedia/commons/transcoded/8/81/Makkah_Al-Mukarramah_-Kaaba-_Ramadan_2016.webm/Makkah_Al-Mukarramah_-Kaaba-_Ramadan_2016.webm.480p.vp9.webm"
+            type="video/webm">
+          <source src="https://upload.wikimedia.org/wikipedia/commons/3/30/Tawaf_Ifadha_2016_with_Amm_Salim.webm"
+            type="video/webm">
+        </video>
+        <div class="hero-video-overlay"></div>
+      </div>
+
+      <!-- Live Video Status / Play-Pause Badge -->
+      <button id="video-toggle-btn" class="video-control-pill" aria-label="تحكم في تشغيل فيديو الحرم">
+        <span class="video-status-dot"></span>
+        <span id="video-toggle-label">أجواء الحرم المكي الشريف</span>
+        <i id="video-toggle-icon" class="fa-solid fa-pause"></i>
+      </button>
+
+      <div class="container hero-content">
+        <div class="hero-pill">
+          <span>الشركة الرائدة في خدمات الحج والعمرة والرحلات بمحافظة القليوبية</span>
+        </div>
+
+        <h1 class="hero-title">
+          سافر بفخامة واطمئنان مع <br>
+          <span class="gradient-text">بست تورز بنها</span>
+        </h1>
+
+        <p class="hero-description">
+          نقدم لك تجربة سفر رقمية متكاملة تبدأ من استخراج التأشيرة وتأكيد تذاكر الطيران، وحتى أرقى برامج الحج والعمرة
+          والبكجات السياحية حول العالم.
+        </p>
+
+        <!-- Glassmorphism Booking & Search Widget -->
+        <div class="search-engine-box" id="search-bar">
+          <form id="hero-search-form" class="search-form-grid">
+
+            <!-- Destination Field -->
+            <div class="search-field">
+              <label for="search-dest">
+                <span>الوجهة أو الرحلة</span>
+              </label>
+              <div class="search-input-wrap">
+                <input type="text" id="search-dest" placeholder="مكة، إسطنبول، دبي، شرم الشيخ..." autocomplete="off">
+              </div>
+            </div>
+
+            <!-- Service Type Field -->
+            <div class="search-field">
+              <label for="search-service">
+                <span>نوع الخدمة</span>
+              </label>
+              <div class="search-input-wrap">
+                <select id="search-service">
+                  <option value="all">جميع البرامج والخدمات</option>
+                  <option value="umrah">الحج والعمرة (مكة والمدينة)</option>
+                  <option value="international">السياحة الدولية الخارجية</option>
+                  <option value="domestic">السياحة الداخلية بمصر</option>
+                  <option value="visas">استخراج التأشيرات</option>
+                  <option value="flights">حجوزات تذاكر الطيران</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Travel Date Field -->
+            <div class="search-field">
+              <label for="search-date">
+                <span>موعد السفر المفضل</span>
+              </label>
+              <div class="search-input-wrap">
+                <input type="date" id="search-date">
+              </div>
+            </div>
+
+            <!-- Travelers Field -->
+            <div class="search-field">
+              <label for="search-travelers">
+                <span>عدد المسافرين</span>
+              </label>
+              <div class="search-input-wrap">
+                <select id="search-travelers">
+                  <option value="1">مسافر واحد (فردي)</option>
+                  <option value="2">شخصين (زوجي / ثنائي)</option>
+                  <option value="3-4">عائلة (3 - 4 أفراد)</option>
+                  <option value="5+">مجموعة أو فوج (5 فأكثر)</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-gold" id="search-submit-btn">
+              <span>ابحث الآن</span>
+            </button>
+          </form>
+
+          <!-- Quick Discovery Tags -->
+          <div class="quick-tags">
+            <span>البحث السريع:</span>
+            <button type="button" class="quick-tag-chip" data-query="مكة">عمرة رجب 5 نجوم</button>
+            <button type="button" class="quick-tag-chip" data-query="شنغن">تأشيرة شنغن</button>
+            <button type="button" class="quick-tag-chip" data-query="شرم">شرم الشيخ ديلوكس</button>
+            <button type="button" class="quick-tag-chip" data-query="تركيا">رحلات إسطنبول</button>
+            <button type="button" class="quick-tag-chip" data-query="دبي">سياحة دبي</button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         Section 2: Trust Credentials & Badges Bar
+         ========================================================================== -->
+    <section class="trust-bar">
+      <div class="container trust-grid">
+        <div class="trust-item">
+          <div class="trust-icon"><i class="fa-solid fa-shield-halved"></i></div>
+          <div>
+            <h4>ترخيص وزارة السياحة</h4>
+            <p>ترخيص رسمي فئة (أ) رقم129 لسنه 1947 </p>
+          </div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon"><i class="fa-solid fa-plane"></i></div>
+          <div>
+            <h4>معتمد من IATA</h4>
+            <p>وكالة سفر دولية معتمدة عالمياً</p>
+          </div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon"><i class="fa-solid fa-kaaba"></i></div>
+          <div>
+            <h4>+15,000 معتمر</h4>
+            <p>خدمنا ضيوف الرحمن عبر عقد ونصف</p>
+          </div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon"><i class="fa-solid fa-headset"></i></div>
+          <div>
+            <h4>دعم على مدار الساعة</h4>
+            <p>فريق مخصص بفرع بنها لخدمتكم</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         Section 3: Our Core Services (خدماتنا)
+         ========================================================================== -->
+    <section id="services" class="services-section">
+      <div class="container">
+        <div class="text-center">
+          <span class="section-tag">خدمات راقية وموثوقة</span>
+          <h2 class="section-title">منظومة خدمات سفر متكاملة</h2>
+          <p class="section-subtitle">نضع بين يديك خبرة سنوات طويلة في صناعة السفر والسياحة لنضمن لك ولعائلتك رحلة مريحة
+            وآمنة خالية من أي تعقيدات.</p>
+        </div>
+
+        <div class="services-grid">
+          <!-- Card 1: Umrah & Hajj -->
+          <div class="service-card">
+
+            <div class="service-icon-box">
+              <i class="fa-solid fa-kaaba"></i>
+            </div>
+            <h3>الحج والعمرة</h3>
+            <p>برامج عمرة منتظمة على مدار العام (مباشرة، طيران، بري فخم) مع فنادق الصفوة وأبراج مكة والمدينة وإشراف ديني
+              متميز.</p>
+            <a href="#umrah-section" class="card-link">استعرض برامج العمرة</a>
+          </div>
+
+          <!-- Card 2: Visas -->
+          <div class="service-card">
+            <div class="service-icon-box">
+              <i class="fa-solid fa-passport"></i>
+            </div>
+            <h3>خدمات التأشيرات</h3>
+            <p>إعداد ملفات تأشيرات الشنغن، بريطانيا، أمريكا، تأشيرات الخليج الإلكترونية وحجز المواعيد الرسمية وترجمة
+              المستندات.</p>
+            <a href="#visas-section" class="card-link">مستكشف التأشيرات</a>
+          </div>
+
+          <!-- Card 3: Flights -->
+          <div class="service-card">
+
+            <div class="service-icon-box">
+              <i class="fa-solid fa-plane-departure"></i>
+            </div>
+            <h3>تذاكر الطيران</h3>
+            <p>حجز تذاكر الطيران على جميع الخطوط العالمية والمحلية بأفضل الأسعار المتاحة مع مرونة التغيير وخدمة اختيار
+              المقاعد والوزن.</p>
+            <a href="#search-bar" class="card-link">احجز تذكرتك فوراً</a>
+          </div>
+
+          <!-- Card 4: International Travel -->
+          <div class="service-card">
+
+            <div class="service-icon-box">
+              <i class="fa-solid fa-earth-americas"></i>
+            </div>
+            <h3>السياحة الخارجية</h3>
+            <p>رحلات منظمة إلى تركيا، جورجيا، الإمارات، ماليزيا، ولبنان شاملة تذاكر الطيران، الإقامة الفندقية الفاخرة،
+              والجولات السياحية.</p>
+            <a href="#choose-trip" class="card-link">اكتشف الوجهات الدولية</a>
+          </div>
+
+          <!-- Card 5: Domestic Travel -->
+          <div class="service-card">
+
+            <div class="service-icon-box">
+              <i class="fa-solid fa-umbrella-beach"></i>
+            </div>
+            <h3>السياحة الداخلية</h3>
+            <p>منتجعات شرم الشيخ والغردقة ومرسى علم ودهب، بالإضافة لرحلات النايل كروز الأسطورية بين الأقصر وأسوان بأرقى
+              السفن السياحية.</p>
+            <a href="#choose-trip" class="card-link">استعرض عروض مصر</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         Section 4 & 5: Choose Your Trip & Featured Destinations
+         ========================================================================== -->
+    <section id="choose-trip" class="choose-trip-section">
+      <div class="container">
+        <div class="text-center">
+          <span class="section-tag">وجهات استثنائية</span>
+          <h2 class="section-title">اختر رحلتك القادمة</h2>
+          <p class="section-subtitle">تصفح تشكيلتنا المنتقاة بعناية من أفضل برامج السفر المتاحة حالياً مع تفاصيل واضحة
+            وأسعار حقيقية تبدأ من بنها.</p>
+        </div>
+
+        <!-- Filter Tab Bar -->
+        <div class="filter-tab-bar" role="tablist">
+          <button class="tab-btn active" data-category="all" role="tab" aria-selected="true">
+            <span>جميع البرامج</span>
+          </button>
+          <button class="tab-btn" data-category="umrah" role="tab" aria-selected="false">
+            <span>الحج والعمرة</span>
+          </button>
+          <button class="tab-btn" data-category="international" role="tab" aria-selected="false">
+            <span>السياحة الخارجية</span>
+          </button>
+          <button class="tab-btn" data-category="domestic" role="tab" aria-selected="false">
+            <span>السياحة الداخلية</span>
+          </button>
+          <button class="tab-btn" data-category="visas" role="tab" aria-selected="false">
+            <span>التأشيرات</span>
+          </button>
+          <button class="tab-btn" data-category="flights" role="tab" aria-selected="false">
+            <span>عروض الطيران</span>
+          </button>
+        </div>
+
+        <!-- Dynamic Destination Cards Grid -->
+        <div id="destinations-container" class="destination-grid">
+          <!-- Populated dynamically via js/app.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         Section 6: Featured Offers & Flash Deals
+         ========================================================================== -->
+    <section id="offers-section" class="offers-section">
+      <div class="container">
+        <div class="text-center">
+          <span class="section-tag light">عروض محدودة المدة</span>
+          <h2 class="section-title light">عروض وخصومات بست تورز الحصرية</h2>
+          <p class="section-subtitle light">وفر أكثر مع باقاتنا الموسمية الخاصة بخصومات فورية عند الحجز المبكر أو
+            المجموعات والعائلات.</p>
+        </div>
+
+        <div id="offers-container" class="offers-grid">
+          <!-- Populated dynamically via js/app.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         Section 7: Why Best Tours (لماذا بست تورز بنها)
+         ========================================================================== -->
+    <section id="why-us" class="why-section">
+      <div class="container">
+        <div class="text-center">
+          <span class="section-tag">معايير التميز</span>
+          <h2 class="section-title">لماذا يختارنا المسافرون في بنها والقليوبية؟</h2>
+          <p class="section-subtitle">نحن لا نبيع تذاكر فحسب؛ بل نصنع ذكريات تدوم، بأعلى مستويات الشفافية وراحة البال
+            المطلقة.</p>
+        </div>
+
+        <div class="why-grid">
+          <div class="why-card">
+            <div class="why-icon"><i class="fa-solid fa-certificate"></i></div>
+            <h3>تراخيص رسمية 100%</h3>
+            <p>شركة سياحة فئة (أ) خاضعة لإشراف وزارة السياحة وغرفة شركات ووكالات السفر، مما يضمن حقوقك كاملة بعقود
+              رسمية.</p>
+          </div>
+          <div class="why-card">
+            <div class="why-icon"><i class="fa-solid fa-hotel"></i></div>
+            <h3>فنادق منتقاة بعناية</h3>
+            <p>معاينات دورية للفنادق والمطاعم والحافلات لضمان مطابقتها لأعلى معايير النظافة والراحة والمواقع القريبة من
+              الحرمين والشواطئ.</p>
+          </div>
+          <div class="why-card">
+            <div class="why-icon"><i class="fa-solid fa-hand-holding-dollar"></i></div>
+            <h3>أسعار واضحة وبدون مفاجآت</h3>
+            <p>نلتزم بالشفافية التامة في كافة بنود الرحلة وتكاليفها بدون أي رسوم خفية أو تكاليف غير معلنة قبل السفر.</p>
+          </div>
+          <div class="why-card">
+            <div class="why-icon"><i class="fa-solid fa-people-roof"></i></div>
+            <h3>خدمة محلية من قلب بنها</h3>
+            <p>مقر دائم لخدمتك على كورنيش بنها، يتيح لك زيارتنا شخصياً ومقابلة مستشاري السفر وتوقيع العقود واستلام
+              المستندات بسهولة.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         Section 8: How It Works Flow (كيف يتم الحجز)
+         ========================================================================== -->
+    <section class="how-section">
+      <div class="container">
+        <div class="text-center">
+          <span class="section-tag">خطوات بسيطة وميسرة</span>
+          <h2 class="section-title">كيف تبدأ رحلتك معنا في 4 خطوات؟</h2>
+          <p class="section-subtitle">صممنا تجربة الحجز لتكون سهلة وسريعة للغاية، سواءً عبر الموقع أو الواتساب أو بزيارة
+            فرعنا في بنها.</p>
+        </div>
+
+        <div class="steps-grid">
+          <div class="step-card">
+            <div class="step-number">1</div>
+            <div class="step-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+            <h3>اختر برنامجك المفضل</h3>
+            <p>تصفح برامج العمرة أو العطلات أو اختر التأشيرة التي ترغب في استخراجها وحدد موعدك المناسب.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-number">2</div>
+            <div class="step-icon"><i class="fa-solid fa-comments"></i></div>
+            <h3>تأكيد التفاصيل والاستشارة</h3>
+            <p>يتواصل معك مستشار السفر لشرح كافة تفاصيل الفندق، الطيران، المواعيد وتقديم أفضل تسعير متاح.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-number">3</div>
+            <div class="step-icon"><i class="fa-solid fa-file-invoice"></i></div>
+            <h3>إصدار الأوراق والتأشيرات</h3>
+            <p>نقوم باستخراج الباركود، التأشيرات، تذاكر الطيران، وحجوزات الفنادق المعتمدة وتسليمك الملف كاملاً.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-number">4</div>
+            <div class="step-icon"><i class="fa-solid fa-plane-departure"></i></div>
+            <h3>انطلق برحلتك بسلام</h3>
+            <p>سافر براحة بال مع وجود مشرف مخصص من بست تورز يتابعك خطوة بخطوة حتى عودتك سالماً لأرض الوطن.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         Section 9: Dedicated Umrah / Hajj Spotlight
+         ========================================================================== -->
+    <section id="umrah-section" class="umrah-section">
+      <div class="container">
+        <div class="umrah-banner-card">
+          <div class="umrah-banner-media">
+            <img id="umrah-home-banner-img" src="https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?auto=format&fit=crop&w=1000&q=80"
+              alt="الحج والعمرة مع بست تورز بنها" loading="lazy">
+          </div>
+          <div class="umrah-banner-content">
+            <span class="section-tag light">خدمة ضيوف الرحمن شرف لنا</span>
+            <h2 style="font-size: 2.2rem; font-weight: 800; color: #fff; margin-bottom: 1rem;">
+              برامج العمرة VIP والبرامج الاقتصادية
+            </h2>
+            <p style="color: var(--text-muted-dark); font-size: 1rem; line-height: 1.7;">
+              نولي معتمرينا أقصى درجات الاهتمام من خلال فنادق ساحة الحرم المكي مباشرة، طيران مباشر من مطار القاهرة إلى
+              جدة أو المدينة، ومرشدين دينيين لمرافقة الأفواج والإجابة عن كافة المناسك.
+            </p>
+
+            <div class="umrah-features-list">
+              <div class="umrah-feature-item">
+                <span>فنادق 5 نجوم (أبراج الصفوة، دار التوحيد، أنوار المدينة موفنبيك)</span>
+              </div>
+              <div class="umrah-feature-item">
+                <span>خدمة خاصة وميسرة لكبار السن وذوي الهمم ووجبات فاخرة</span>
+              </div>
+              <div class="umrah-feature-item">
+                <span>إصدار فوري لتأشيرة العمرة والباركود وتأمين السفر الصحي</span>
+              </div>
+              <div class="umrah-feature-item">
+                <span>باصات VIP مرسيدس حديثة ومكيفة لنقل الحجاج بين مكة والمدينة والمزارات</span>
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1rem;">
+              <button class="btn btn-gold open-inquiry-trigger" data-trip="برامج العمرة والحج VIP"
+                data-category="umrah">
+                <span>احجز مقعدك في الفوج القادم</span>
+              </button>
+              <a href="https://wa.me/201050079811?text=السلام%20عليكم%20أود%20الاستفسار%20عن%20برامج%20العمرة%20المتاحة%20لدى%20بست%20تورز%20بنها"
+                target="_blank" class="btn btn-emerald">
+                <span>تواصل مع مشرف العمرة</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         Section 10: Visa Explorer
+         ========================================================================== -->
+    <section id="visas-section" class="visas-section">
+      <div class="container">
+        <div class="text-center">
+          <span class="section-tag">مستكشف التأشيرات السريعة</span>
+          <h2 class="section-title">استخرج تأشيرتك بأعلى معدل قبول</h2>
+          <p class="section-subtitle">فريق متخصص بمكتب بنها لمراجعة الأوراق، حجز مواعيد السفارات، ترجمة المستندات وإعداد
+            خطابات العمل وكشوف الحسابات المعتمدة.</p>
+        </div>
+
+        <div id="visas-container" class="visa-grid">
+          <!-- Populated dynamically via js/app.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         Section 11: Client Testimonials
+         ========================================================================== -->
+    <section id="testimonials" class="testimonials-section">
+      <div class="container">
+        <div class="text-center">
+          <span class="section-tag">ثقة عملاؤنا</span>
+          <h2 class="section-title">تجارب حقيقية من أهالي بنها والقليوبية</h2>
+          <p class="section-subtitle">نعتز بثقة آلاف المسافرين الذين شاركونا رحلاتهم واختاروا بست تورز رفيقاً دائماً
+            لسفرهم.</p>
+        </div>
+
+        <div class="testimonials-grid">
+          <div class="testimonial-card">
+            <div class="test-stars">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="test-quote">"تجربتي مع شركة بست تورز بنها كانت قمة في الالتزام والذوق. الفندق في مكة كان على بعد
+              خطوات من ساحة الحرم، والباصات مريحة جداً. شكراً لكل فريق العمل على الرعاية الفائقة لكبار السن."</p>
+            <div class="test-author">
+              <div class="test-info">
+                <h4>الحاج عصام الشرقاوي</h4>
+                <p>معتمر - برنامج عمرة رجب • بنها</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="test-stars">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="test-quote">"كنت قلقة جداً من استخراج تأشيرة الشنغن لفرنسا، لكن فريق بست تورز بنها نظموا كشف
+              الحساب والموعد بطريقة احترافية تماماً وحصلت على التأشيرة خلال أسبوعين بدون أي تعقيد."</p>
+            <div class="test-author">
+              <div class="test-info">
+                <h4>د. إيمان النجار</h4>
+                <p>تأشيرة شنغن وسياحة أوروبا • كفر الجزار</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="test-stars">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="test-quote">"السفر لشرم الشيخ مع بست تورز كان قمة في الرفاهية. وفروا لنا فندق 5 نجوم ألترا أول
+              إنكلوسيف بسعر أفضل بكثير من بوكينج وباص مريح انطلق مباشرة من أمام فرعهم في بنها."</p>
+            <div class="test-author">
+              <div class="test-info">
+                <h4>م. محمد فتحي وعائلته</h4>
+                <p>رحلة عائلية شرم الشيخ • الفلل، بنها</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         Section 12: Instagram-style Traveler Feed Gallery
+         ========================================================================== -->
+    <section class="gallery-section">
+      <div class="container">
+        <div class="text-center">
+          <span class="section-tag">نبض رحلاتنا</span>
+          <h2 class="section-title">لحظات حية من رحلات عملاء بست تورز</h2>
+          <p class="section-subtitle">صور حقيقية التقطها مسافرونا وضريح الحرمين الشريفين، جولات البوسفور، شواطئ البحر
+            الأحمر، ونيل الأقصر الساحر.</p>
+        </div>
+
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?auto=format&fit=crop&w=600&q=80"
+              alt="المسجد الحرام بمكة" loading="lazy">
+            <div class="gallery-overlay">
+              <span class="gallery-tag">#عمرة_مباركة</span>
+              <p class="gallery-caption">أجواء روحانية أمام الكعبة المشرفة مع فوج بست تورز بنها</p>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?auto=format&fit=crop&w=600&q=80"
+              alt="إسطنبول تركيا" loading="lazy">
+            <div class="gallery-overlay">
+              <span class="gallery-tag">#تركيا_2026</span>
+              <p class="gallery-caption">جولة البوسفور الخاصة لجروب بنها في سحر إسطنبول</p>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=600&q=80"
+              alt="دبي الإمارات" loading="lazy">
+            <div class="gallery-overlay">
+              <span class="gallery-tag">#دبي_سفاري</span>
+              <p class="gallery-caption">سفاري الكثبان الرملية وعطلة برج خليفة الفاخرة</p>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1544885935-98dd03b09034?auto=format&fit=crop&w=600&q=80"
+              alt="شرم الشيخ" loading="lazy">
+            <div class="gallery-overlay">
+              <span class="gallery-tag">#شرم_الشيخ</span>
+              <p class="gallery-caption">مياه البحر الأحمر الفيروزية بريزورت 5 نجوم ديلوكس</p>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1539650116574-8efeb43e2750?auto=format&fit=crop&w=600&q=80"
+              alt="نايل كروز الأقصر" loading="lazy">
+            <div class="gallery-overlay">
+              <span class="gallery-tag">#نايل_كروز</span>
+              <p class="gallery-caption">شروق الشمس الساحر من سطح الباخرة النيلية بين الأقصر وأسوان</p>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1565552645632-d725f8bfc19a?auto=format&fit=crop&w=600&q=80"
+              alt="المسجد النبوي الشريف" loading="lazy">
+            <div class="gallery-overlay">
+              <span class="gallery-tag">#المدينة_المنورة</span>
+              <p class="gallery-caption">سكينة وطمأنينة الحرم النبوي مع ضيوف الرحمن</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         Section 13: Final High-Conversion Dual CTA Banner
+         ========================================================================== -->
+    <section class="cta-banner-section">
+      <div class="container">
+        <div class="cta-box">
+          <span class="section-tag light">رحلتك تبدأ الآن</span>
+          <h2>جاهز لبدء رحلتك الاستثنائية؟</h2>
+          <p>
+            سواء كنت تخطط لأداء مناسك العمرة، استخراج تأشيرة سفر، أو حجز عطلة لا تُنسى لعائلتك؛ مستشارو بست تورز بفرع
+            بنها جاهزون لخدمتك فوراً وتقديم أفضل العروض.
+          </p>
+          <div class="cta-buttons">
+            <button class="btn btn-gold open-general-inquiry">
+              <span>طلب استشارة أو حجز فوري</span>
+            </button>
+            <a href="https://wa.me/201050079811?text=مرحباً%20بست%20تورز%20بنها،%20أود%20الاستفسار%20عن%20رحلة%20سفر"
+              target="_blank" class="btn btn-emerald">
+              <span>تحدث مع خدمة العملاء على واتساب</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       Footer Section
+       ========================================================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Col 1: About Best Tours Benha -->
+        <div class="footer-col footer-about">
+          <div class="brand-logo" style="margin-bottom: 1.25rem;">
+            <img src="assets/images/logo.png" alt="Best Tours Benha Logo" class="brand-logo-img">
+            <div class="logo-text">
+              <h2 style="font-size: 1.2rem; color: #fff;">بست تورز <span style="color: var(--gold-light);">بنها</span>
+              </h2>
+              <p style="font-size: 0.7rem; color: var(--gold-primary);">DIGITAL TRAVEL EXPERIENCE</p>
+            </div>
+          </div>
+          <p>
+            شركة بست تورز بنها للسياحة والرحلات. وكالة سفر معتمدة من وزارة السياحة المصرية (فئة أ) وعضو الاتحاد الدولي
+            للنقل الجوي (IATA). خبرة رائدة في تنظيم رحلات الحج والعمرة، استخراج التأشيرات، وبكجات السياحة العالمية
+            والمحلية.
+          </p>
+          <div class="social-links">
+            <a href="https://facebook.com" target="_blank" class="social-icon-btn" aria-label="Facebook"><i
+                class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://instagram.com" target="_blank" class="social-icon-btn" aria-label="Instagram"><i
+                class="fa-brands fa-instagram"></i></a>
+            <a href="https://wa.me/201050079811" target="_blank" class="social-icon-btn" aria-label="WhatsApp"><i
+                class="fa-brands fa-whatsapp"></i></a>
+            <a href="mailto:info@besttours-benha.com" class="social-icon-btn" aria-label="Email"><i
+                class="fa-solid fa-envelope"></i></a>
+          </div>
+        </div>
+
+        <!-- Col 2: Quick Links -->
+        <div class="footer-col">
+          <h3>روابط سريعة</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">الرئيسية</a></li>
+            <li><a href="services.html">خدماتنا السياحية</a></li>
+            <li><a href="trips.html">أحدث البرامج والوجهات</a></li>
+            <li><a href="umrah.html">رحلات الحج والعمرة</a></li>
+            <li><a href="visas.html">خدمات التأشيرات السريعة</a></li>
+            <li><a href="offers.html">عروض وخصومات الموسم</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Legal & Credentials -->
+        <div class="footer-col">
+          <h3>التراخيص والاعتمادات</h3>
+          <ul class="footer-links">
+            <li><span>ترخيص سياحة رقم 147 فئة (أ)</span></li>
+            <li><span>معتمد رسمي من منظمة IATA</span></li>
+            <li><span>عضو غرفة شركات السياحة</span></li>
+            <li><span>ربط إلكتروني مع منصة نسك</span></li>
+            <li><a href="why-us.html">سياسة الخصوصية والشروط</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Contact & Benha Office -->
+        <div class="footer-col">
+          <h3>تواصل مع فرع بنها</h3>
+          <div class="footer-contact-list">
+            <div class="footer-contact-item">
+              <i class="fa-solid fa-location-dot"></i>
+              <span>بنها - كورنيش النيل، بجوار بنك CIB</span>
+            </div>
+            <div class="footer-contact-item">
+              <i class="fa-solid fa-phone"></i>
+              <span><a href="tel:01028589888" style="color: inherit; text-decoration: none;" dir="ltr">01028589888</a> -
+                <a href="tel:01026663733" style="color: inherit; text-decoration: none;"
+                  dir="ltr">01026663733</a></span>
+            </div>
+            <div class="footer-contact-item">
+              <i class="fa-brands fa-whatsapp"></i>
+              <a href="https://wa.me/201050079811" target="_blank"
+                style="color: var(--gold-light); text-decoration: none;"><span dir="ltr">01050079811</span> (واتساب)</a>
+            </div>
+            <div class="footer-contact-item">
+              <i class="fa-solid fa-envelope"></i>
+              <span>booking@besttours-benha.com</span>
+            </div>
+            <div class="footer-contact-item">
+              <i class="fa-solid fa-clock"></i>
+              <span>السبت - الخميس: 9:00 ص - 10:00 م<br>الجمعة: 1:00 م - 10:00 م</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          © 2026 بست تورز بنها (Best Tours Benha). جميع الحقوق محفوظة.
+        </div>
+        <div style="color: var(--gold-primary);">
+          بوابة السفر الرقمية الأولى في محافظة القليوبية
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       Interactive Inquiry / Booking Modal
+       ========================================================================== -->
+  <div id="inquiry-modal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 id="modal-title">طلب حجز واستفسار سريع</h3>
+        <button id="modal-close-btn" class="modal-close-btn" aria-label="Close dialog">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="modal-inquiry-form" class="modal-form">
+          <div class="form-group">
+            <label for="modal-trip-title">البرنامج أو الخدمة المطلوبة</label>
+            <input type="text" id="modal-trip-title" readonly
+              style="background: rgba(255,255,255,0.02); color: var(--gold-light); font-weight: 700;">
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="modal-fullname">الاسم بالكامل *</label>
+              <input type="text" id="modal-fullname" placeholder="مثال: أحمد محمود" required>
+            </div>
+            <div class="form-group">
+              <label for="modal-phone">رقم الهاتف / واتساب *</label>
+              <input type="tel" id="modal-phone" placeholder="01012345678" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="modal-service-type">تصنيف الخدمة</label>
+              <select id="modal-service-type">
+                <option value="umrah">عمرة وحج</option>
+                <option value="visas">تأشيرة</option>
+                <option value="flights">تذكرة طيران</option>
+                <option value="international">سياحة خارجية</option>
+                <option value="domestic">سياحة داخلية</option>
+                <option value="general">استفسار عام</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="modal-travelers">عدد الأفراد</label>
+              <select id="modal-travelers">
+                <option value="1">1 فرد</option>
+                <option value="2">فردين (شخصين)</option>
+                <option value="3">3 أفراد</option>
+                <option value="4+">4 أفراد أو أكثر</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="modal-date">الموعد التقريبي للسفر</label>
+            <input type="date" id="modal-date">
+          </div>
+
+          <div class="form-group">
+            <label for="modal-notes">ملاحظات أو طلبات خاصة (اختياري)</label>
+            <textarea id="modal-notes" rows="2" placeholder="نوع الفندق المفضل، عدد الغرف، إلخ..."></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="modal-method">طريقة المتابعة والتأكيد المفضلة</label>
+            <select id="modal-method">
+              <option value="whatsapp">متابعة فورية عبر الواتساب (موصى به)</option>
+              <option value="call">اتصال هاتفي من مستشار الحجوزات</option>
+              <option value="branch">زيارة فرع بنها شخصياً</option>
+            </select>
+          </div>
+
+          <button type="submit" class="btn btn-gold" style="width: 100%; margin-top: 0.5rem;">
+            <span>تأكيد وإرسال الطلب</span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Container -->
+  <div id="toast-container" class="toast-container" aria-live="polite"></div>
+
+  <!-- Scripts -->
+  <!-- Firebase SDK (Compat Version) -->
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+  <script src="js/firebase-config.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>لوحة التحكم | إدارة الحج والعمرة - بست تورز بنها</title>
+  <link rel="icon" type="image/png" href="assets/images/logo.png">
+
+  <!-- Google Fonts: Cairo & Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Main & Dashboard CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body class="dashboard-body">
+
+  <!-- Dashboard Top Header -->
+  <header class="dash-header">
+    <div class="dash-header-inner">
+      <div class="dash-brand">
+        <img src="assets/images/logo.png" alt="Best Tours Benha" class="dash-logo-img">
+        <div class="dash-title-group">
+          <h1>لوحة تحكم بست تورز <span style="color: var(--dash-gold-light);">بنها</span></h1>
+          <p>نظام إدارة وتعديل أسعار وصور باقات الحج والعمرة</p>
+        </div>
+      </div>
+
+      <div class="dash-status-pill">
+        <span class="dash-status-dot"></span>
+        <span>النظام متصل • التعديلات تظهر فورياً بالموقع</span>
+      </div>
+
+      <div class="dash-header-actions">
+        <a href="umrah.html" target="_blank" class="dash-btn dash-btn-outline dash-btn-sm">
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          <span>معاينة صفحة العمرة</span>
+        </a>
+        <a href="index.html" target="_blank" class="dash-btn dash-btn-outline dash-btn-sm">
+          <i class="fa-solid fa-house"></i>
+          <span>الرئيسية</span>
+        </a>
+        <button id="btn-admin-logout" class="dash-btn dash-btn-danger dash-btn-sm" title="تسجيل الخروج من لوحة التحكم">
+          <i class="fa-solid fa-right-from-bracket"></i>
+          <span>تسجيل خروج</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Auth Protection Screen for Dashboard -->
+  <div id="dash-auth-guard" style="position: fixed; inset: 0; background: var(--dash-bg); z-index: 9999; display: flex; align-items: center; justify-content: center; padding: 1.5rem;">
+    <div class="dash-modal-content" style="max-width: 420px; padding: 2.5rem 2rem; text-align: center; border: 1px solid var(--dash-gold); box-shadow: 0 25px 60px rgba(0,0,0,0.8);">
+      <div class="dash-stat-icon gold" style="width: 70px; height: 70px; font-size: 2rem; margin: 0 auto 1.25rem;">
+        <i class="fa-solid fa-lock"></i>
+      </div>
+      <h2 style="font-size: 1.4rem; color: #fff; font-weight: 800; margin-bottom: 0.35rem;">تسجيل الدخول للوحة التحكم</h2>
+      <p style="color: var(--dash-muted); font-size: 0.85rem; margin-bottom: 1.5rem;">بست تورز بنها • إدارة الحج والعمرة</p>
+
+      <div id="dash-guard-error" class="admin-login-error" style="display: none; justify-content: center;">
+        <i class="fa-solid fa-triangle-exclamation"></i>
+        <span>اسم المستخدم أو كلمة المرور غير صحيحة!</span>
+      </div>
+
+      <form id="dash-guard-form" style="display: flex; flex-direction: column; gap: 1.1rem; text-align: right;">
+        <div class="dash-form-group" style="margin-bottom: 0;">
+          <label for="guard-user" style="font-size: 0.85rem; color: var(--dash-gold-light);">اسم المستخدم (Username)</label>
+          <input type="text" id="guard-user" placeholder="best" required autocomplete="username">
+        </div>
+        <div class="dash-form-group" style="margin-bottom: 0;">
+          <label for="guard-pass" style="font-size: 0.85rem; color: var(--dash-gold-light);">كلمة المرور (Password)</label>
+          <input type="password" id="guard-pass" placeholder="••••••••" required autocomplete="current-password">
+        </div>
+        <button type="submit" class="dash-btn dash-btn-gold" style="width: 100%; justify-content: center; margin-top: 0.5rem; font-size: 1rem;">
+          <i class="fa-solid fa-right-to-bracket"></i>
+          <span>دخول</span>
+        </button>
+        <a href="index.html" class="dash-btn dash-btn-outline dash-btn-sm" style="width: 100%; justify-content: center;">
+          <span>الرجوع للموقع الرئيسي</span>
+        </a>
+      </form>
+    </div>
+  </div>
+
+  <!-- Main Dashboard Content -->
+  <main class="dash-main">
+
+    <!-- KPI Stats Cards Row -->
+    <div class="dash-stats-grid">
+      <div class="dash-stat-card">
+        <div class="dash-stat-icon gold">
+          <i class="fa-solid fa-kaaba"></i>
+        </div>
+        <div class="dash-stat-info">
+          <h3>إجمالي برامج العمرة</h3>
+          <div class="stat-val" id="stat-total-pkgs">0</div>
+        </div>
+      </div>
+
+      <div class="dash-stat-card">
+        <div class="dash-stat-icon emerald">
+          <i class="fa-solid fa-circle-check"></i>
+        </div>
+        <div class="dash-stat-info">
+          <h3>البرامج النشطة والمعروضة</h3>
+          <div class="stat-val" id="stat-active-pkgs">0</div>
+        </div>
+      </div>
+
+      <div class="dash-stat-card">
+        <div class="dash-stat-icon blue">
+          <i class="fa-solid fa-tag"></i>
+        </div>
+        <div class="dash-stat-info">
+          <h3>متوسط سعر الباقات</h3>
+          <div class="stat-val" id="stat-avg-price">0 ج.م</div>
+        </div>
+      </div>
+
+      <div class="dash-stat-card">
+        <div class="dash-stat-icon gold">
+          <i class="fa-solid fa-envelope-open-text"></i>
+        </div>
+        <div class="dash-stat-info">
+          <h3>طلبات وحجوزات العملاء</h3>
+          <div class="stat-val" id="stat-total-inquiries">0</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation Tabs -->
+    <div class="dash-nav-tabs" role="tablist">
+      <button class="dash-tab-btn active" data-tab="tab-packages">
+        <i class="fa-solid fa-rectangle-list"></i>
+        <span>باقات وبرامج العمرة (تعديل الأسعار والصور)</span>
+      </button>
+      <button class="dash-tab-btn" data-tab="tab-banner">
+        <i class="fa-solid fa-image"></i>
+        <span>بنر وصور الحج والعمرة بالموقع</span>
+      </button>
+      <button class="dash-tab-btn" data-tab="tab-inquiries">
+        <i class="fa-solid fa-users-viewfinder"></i>
+        <span>سجل حجوزات واستفسارات الزوار</span>
+      </button>
+      <button class="dash-tab-btn" data-tab="tab-account">
+        <i class="fa-solid fa-key"></i>
+        <span>تغيير بيانات الدخول (اليوزر والباسورد)</span>
+      </button>
+    </div>
+
+    <!-- ==========================================================================
+         TAB 1: UMRAH PACKAGES (PRICES & IMAGES)
+         ========================================================================== -->
+    <section id="tab-packages" class="dash-panel active">
+      <!-- Toolbar -->
+      <div class="dash-toolbar">
+        <div class="dash-search-box">
+          <i class="fa-solid fa-magnifying-glass dash-search-icon"></i>
+          <input type="text" id="pkg-search-input" placeholder="ابحث باسم البرنامج، الفندق، أو التصنيف...">
+        </div>
+
+        <div class="dash-actions-group">
+          <button id="btn-add-pkg" class="dash-btn dash-btn-gold">
+            <i class="fa-solid fa-plus"></i>
+            <span>إضافة باقة عمرة جديدة</span>
+          </button>
+          <button id="btn-reset-pkgs" class="dash-btn dash-btn-outline" title="استعادة البرامج الافتراضية">
+            <i class="fa-solid fa-rotate-left"></i>
+            <span>استعادة الافتراضي</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Packages Cards Grid Container -->
+      <div id="dash-packages-container" class="dash-packages-grid">
+        <!-- Rendered via js/dashboard.js -->
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         TAB 2: UMRAH BANNER MEDIA SETTINGS
+         ========================================================================== -->
+    <section id="tab-banner" class="dash-panel">
+      <div style="background: var(--dash-surface); border: 1px solid var(--dash-border); border-radius: 16px; padding: 2rem; max-width: 900px; margin: 0 auto;">
+        <h2 style="font-size: 1.5rem; color: #fff; margin-bottom: 0.5rem; font-weight: 800;">
+          تعديل صورة ونصوص بنر الحج والعمرة
+        </h2>
+        <p style="color: var(--dash-muted); margin-bottom: 2rem;">
+          الصورة والنصوص المعروضة في سكشن الحج والعمرة الرئيسي بصفحة [الحج والعمرة] والصفحة الرئيسية.
+        </p>
+
+        <!-- Current Banner Live Preview -->
+        <div class="dash-form-group">
+          <label>معاينة صورة البنر الحالية:</label>
+          <div class="dash-img-preview-box" style="aspect-ratio: 21 / 9; max-height: 350px;">
+            <img id="banner-preview-img" src="" alt="Banner Preview">
+          </div>
+        </div>
+
+        <!-- Image source options -->
+        <div class="dash-form-row">
+          <div class="dash-form-group">
+            <label for="banner-img-url">رابط الصورة (URL):</label>
+            <input type="url" id="banner-img-url" placeholder="https://example.com/kaaba.jpg">
+          </div>
+          <div class="dash-form-group">
+            <label for="banner-file-input">أو ارفع صورة من جهازك:</label>
+            <input type="file" id="banner-file-input" accept="image/*">
+          </div>
+        </div>
+
+        <!-- Quick photo picker for banner -->
+        <div class="dash-form-group">
+          <label>أو اختر صورة جاهزة عالية الجودة بنقرة واحدة:</label>
+          <div class="dash-quick-photos-picker" id="banner-quick-photos">
+            <!-- Populated via js/dashboard.js -->
+          </div>
+        </div>
+
+        <div class="dash-form-group">
+          <label for="banner-title-input">عنوان البنر الرئيسي:</label>
+          <input type="text" id="banner-title-input" placeholder="برامج العمرة VIP والبرامج الاقتصادية">
+        </div>
+
+        <div class="dash-form-group">
+          <label for="banner-subtitle-input">نص الوصف الترويجي:</label>
+          <textarea id="banner-subtitle-input" rows="3" placeholder="اكتب وصفاً جذاباً لبرامج العمرة..."></textarea>
+        </div>
+
+        <div style="display: flex; gap: 1rem; justify-content: flex-end; margin-top: 1.5rem;">
+          <button id="btn-save-banner" class="dash-btn dash-btn-gold">
+            <i class="fa-solid fa-floppy-disk"></i>
+            <span>حفظ تحديثات البنر</span>
+          </button>
+          <button id="btn-reset-banner" class="dash-btn dash-btn-outline">
+            <i class="fa-solid fa-rotate-left"></i>
+            <span>استعادة بنر الحرم الافتراضي</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         TAB 3: CUSTOMER INQUIRIES & LEADS LOG
+         ========================================================================== -->
+    <section id="tab-inquiries" class="dash-panel">
+      <div class="dash-toolbar">
+        <div>
+          <h2 style="font-size: 1.4rem; color: #fff; margin-bottom: 0.3rem; font-weight: 800;">
+            سجل حجوزات واستفسارات الزوار
+          </h2>
+          <p style="color: var(--dash-muted); margin: 0; font-size: 0.9rem;">
+            الطلبات المسجلة من خلال نماذج الحجز السريع بالموقع للتواصل المباشر مع العملاء.
+          </p>
+        </div>
+        <button id="btn-clear-inquiries" class="dash-btn dash-btn-danger dash-btn-sm">
+          <i class="fa-solid fa-trash-can"></i>
+          <span>مسح كافة السجلات</span>
+        </button>
+      </div>
+
+      <div class="dash-table-wrap">
+        <table class="dash-table">
+          <thead>
+            <tr>
+              <th>كود الطلب</th>
+              <th>اسم العميل</th>
+              <th>الهاتف</th>
+              <th>الخدمة / البرنامج</th>
+              <th>المسافرين</th>
+              <th>الموعد التقريبي</th>
+              <th>تاريخ الطلب</th>
+              <th>إجراءات</th>
+            </tr>
+          </thead>
+          <tbody id="inquiries-table-body">
+            <!-- Populated via js/dashboard.js -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         TAB 4: ADMIN ACCOUNT & SECURITY SETTINGS
+         ========================================================================== -->
+    <section id="tab-account" class="dash-panel">
+      <div style="background: var(--dash-surface); border: 1px solid var(--dash-border); border-radius: 16px; padding: 2rem; max-width: 600px; margin: 0 auto;">
+        <div style="text-align: center; margin-bottom: 2rem;">
+          <div class="dash-stat-icon gold" style="margin: 0 auto 1rem;">
+            <i class="fa-solid fa-user-shield"></i>
+          </div>
+          <h2 style="font-size: 1.4rem; color: #fff; font-weight: 800; margin-bottom: 0.35rem;">
+            تغيير اسم المستخدم وكلمة المرور
+          </h2>
+          <p style="color: var(--dash-muted); font-size: 0.9rem;">
+            يمكنك تعديل بيانات الدخول الخاصة باللوحة وسيتم تحديثها سحابياً على Firebase.
+          </p>
+        </div>
+
+        <form id="admin-account-form" style="display: flex; flex-direction: column; gap: 1.25rem;">
+          <div class="dash-form-group">
+            <label for="acc-new-user" style="color: var(--dash-gold-light);">اسم المستخدم الجديد (Username) *</label>
+            <input type="text" id="acc-new-user" placeholder="best" required autocomplete="username">
+          </div>
+
+          <div class="dash-form-group">
+            <label for="acc-new-pass" style="color: var(--dash-gold-light);">كلمة المرور الجديدة (Password) *</label>
+            <input type="password" id="acc-new-pass" placeholder="••••••••" required autocomplete="new-password">
+          </div>
+
+          <div class="dash-form-group">
+            <label for="acc-confirm-pass" style="color: var(--dash-gold-light);">تأكيد كلمة المرور الجديدة *</label>
+            <input type="password" id="acc-confirm-pass" placeholder="••••••••" required autocomplete="new-password">
+          </div>
+
+          <button type="submit" class="dash-btn dash-btn-gold" style="width: 100%; justify-content: center; font-size: 1rem; margin-top: 0.5rem;">
+            <i class="fa-solid fa-floppy-disk"></i>
+            <span>حفظ بيانات الدخول الجديدة</span>
+          </button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==========================================================================
+       MODAL: ADD / EDIT UMRAH PACKAGE
+       ========================================================================== -->
+  <div id="pkg-modal" class="dash-modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-pkg-heading">
+    <div class="dash-modal-content">
+      <div class="dash-modal-header">
+        <h3 id="modal-pkg-heading">تعديل باقة العمرة</h3>
+        <button id="btn-close-pkg-modal" class="dash-modal-close" aria-label="Close dialog">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <form id="pkg-form" class="dash-modal-body">
+        <input type="hidden" id="pkg-id-input">
+
+        <!-- Title & Category -->
+        <div class="dash-form-row">
+          <div class="dash-form-group">
+            <label for="pkg-title-input">اسم البرنامج / الباقة *</label>
+            <input type="text" id="pkg-title-input" placeholder="مثال: عمرة رجب وشعبان الفاخرة" required>
+          </div>
+          <div class="dash-form-group">
+            <label for="pkg-tag-input">وسام / تصنيف الباقة</label>
+            <input type="text" id="pkg-tag-input" placeholder="مثال: خمس نجوم VIP أو الأكثر طلباً">
+          </div>
+        </div>
+
+        <!-- Prices (Current & Old) -->
+        <div class="dash-form-row">
+          <div class="dash-form-group">
+            <label for="pkg-price-input" style="color: var(--dash-gold-light);">السعر الحالي (جنيه مصري) *</label>
+            <input type="text" id="pkg-price-input" placeholder="مثال: 49,500" required style="font-weight: 800; font-size: 1.1rem; color: var(--dash-gold-light);">
+          </div>
+          <div class="dash-form-group">
+            <label for="pkg-oldprice-input">السعر قبل الخصم (اختياري)</label>
+            <input type="text" id="pkg-oldprice-input" placeholder="مثال: 58,000">
+          </div>
+        </div>
+
+        <!-- Duration & Hotels -->
+        <div class="dash-form-row">
+          <div class="dash-form-group">
+            <label for="pkg-duration-input">مدة البرنامج</label>
+            <input type="text" id="pkg-duration-input" placeholder="مثال: 10 أيام / 9 ليالٍ">
+          </div>
+          <div class="dash-form-group">
+            <label for="pkg-hotels-input">الفنادق ومكان الإقامة</label>
+            <input type="text" id="pkg-hotels-input" placeholder="مثال: أبراج الصفوة بمكة وموفنبيك بالمدينة">
+          </div>
+        </div>
+
+        <!-- Image Selection & Upload Area -->
+        <div class="dash-form-group" style="background: rgba(0,0,0,0.2); padding: 1.25rem; border-radius: 12px; border: 1px dashed var(--dash-border);">
+          <label style="font-size: 1rem; margin-bottom: 0.75rem;">صورة البرنامج الحالية:</label>
+          
+          <div class="dash-img-preview-box">
+            <img id="pkg-preview-img" src="" alt="Package Image Preview">
+          </div>
+
+          <div class="dash-form-row" style="margin-bottom: 0.75rem;">
+            <div class="dash-form-group" style="margin-bottom: 0;">
+              <label for="pkg-img-url">رابط الصورة (URL):</label>
+              <input type="url" id="pkg-img-url" placeholder="https://images.unsplash.com/...">
+            </div>
+            <div class="dash-form-group" style="margin-bottom: 0;">
+              <label for="pkg-file-input">أو ارفع صورة من جهازك:</label>
+              <input type="file" id="pkg-file-input" accept="image/*">
+            </div>
+          </div>
+
+          <!-- Suggested high quality gallery -->
+          <label style="font-size: 0.85rem; color: var(--dash-muted); margin-top: 0.5rem;">أو اختر صورة جاهزة للحرمين بنقرة واحدة:</label>
+          <div class="dash-quick-photos-picker" id="pkg-quick-photos">
+            <!-- Populated via js/dashboard.js -->
+          </div>
+        </div>
+
+        <!-- Description -->
+        <div class="dash-form-group">
+          <label for="pkg-desc-input">وصف وتفاصيل البرنامج</label>
+          <textarea id="pkg-desc-input" rows="3" placeholder="تفاصيل الإقامة، الطيران، المزارات، والخدمات المشمولة..."></textarea>
+        </div>
+
+        <!-- Active Toggle Checkbox -->
+        <div style="display: flex; align-items: center; gap: 0.75rem; background: rgba(255,255,255,0.03); padding: 0.75rem 1rem; border-radius: 8px;">
+          <input type="checkbox" id="pkg-active-input" checked style="width: 20px; height: 20px; cursor: pointer;">
+          <label for="pkg-active-input" style="margin: 0; cursor: pointer; color: #fff; font-weight: 600;">
+            عرض هذه الباقة في الموقع للزوار
+          </label>
+        </div>
+
+        <div class="dash-modal-footer">
+          <button type="button" id="btn-cancel-pkg" class="dash-btn dash-btn-outline">إلغاء</button>
+          <button type="submit" class="dash-btn dash-btn-gold">
+            <i class="fa-solid fa-check"></i>
+            <span>حفظ التعديلات ونشرها فوراً</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container" class="toast-container" aria-live="polite"></div>
+
+  <!-- Scripts -->
+  <!-- Firebase SDK (Compat Version for Vanilla Web) -->
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+  <script src="js/firebase-config.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>
