@@ -4,13 +4,12 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Initialize State
-  let currentLang = Store.getLanguage();
+  // Initialize State (Arabic Only)
+  let currentLang = 'ar';
   let currentCategory = 'all';
 
   // DOM Elements
   const navbar = document.getElementById('navbar');
-  const langToggleBtn = document.getElementById('lang-toggle-btn');
   const searchForm = document.getElementById('hero-search-form');
   const destinationGrid = document.getElementById('destinations-container');
   const offersGrid = document.getElementById('offers-container');
@@ -40,43 +39,15 @@ document.addEventListener('DOMContentLoaded', () => {
         heroVideo.play();
         if (videoToggleIcon) videoToggleIcon.className = 'fa-solid fa-pause';
         if (videoToggleLabel) {
-          videoToggleLabel.textContent = currentLang === 'ar' ? 'أجواء الحرم المكي الشريف' : 'Holy Kaaba Atmosphere';
+          videoToggleLabel.textContent = 'أجواء الحرم المكي الشريف';
         }
       } else {
         heroVideo.pause();
         if (videoToggleIcon) videoToggleIcon.className = 'fa-solid fa-play';
         if (videoToggleLabel) {
-          videoToggleLabel.textContent = currentLang === 'ar' ? 'تشغيل فيديو الحرم' : 'Play Haram Video';
+          videoToggleLabel.textContent = 'تشغيل فيديو الحرم';
         }
       }
-    });
-  }
-
-  // 1. Language Toggle & Initialization
-  function updateLanguage(lang) {
-    currentLang = lang;
-    Store.setLanguage(lang);
-    
-    // Update button text
-    if (langToggleBtn) {
-      langToggleBtn.innerHTML = lang === 'ar' ? 'English' : 'عربي';
-    }
-
-    if (videoToggleLabel) {
-      videoToggleLabel.textContent = lang === 'ar' ? 'أجواء الحرم المكي الشريف' : 'Holy Kaaba Atmosphere';
-    }
-
-    // Re-render dynamic components
-    renderDestinations(currentCategory);
-    renderOffers();
-    renderVisas();
-    renderUmrah();
-  }
-
-  if (langToggleBtn) {
-    langToggleBtn.addEventListener('click', () => {
-      const nextLang = currentLang === 'ar' ? 'en' : 'ar';
-      updateLanguage(nextLang);
     });
   }
 
