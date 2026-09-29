@@ -131,16 +131,17 @@ const Store = {
     }
   },
 
-  // Language State
+  // Language State (Strictly Arabic)
   getLanguage() {
-    return localStorage.getItem(this.KEYS.LANG) || 'ar';
+    try {
+      localStorage.removeItem(this.KEYS.LANG);
+    } catch (e) {}
+    return 'ar';
   },
 
   setLanguage(lang) {
-    localStorage.setItem(this.KEYS.LANG, lang);
-    document.documentElement.lang = lang;
-    document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
-    window.dispatchEvent(new CustomEvent('btb:language-changed', { detail: { lang } }));
+    document.documentElement.lang = 'ar';
+    document.documentElement.dir = 'rtl';
   },
 
   // Inquiries / Leads (CRUD in LocalStorage)

@@ -76,6 +76,9 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -83,8 +86,16 @@ body {
   background-color: var(--sand-bg);
   color: var(--text-primary);
   line-height: 1.6;
+  width: 100%;
+  max-width: 100%;
   overflow-x: hidden;
+  position: relative;
   -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6, p, span, a, label {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
 }
 
 [dir="ltr"] body {
@@ -103,6 +114,7 @@ ul {
 
 img {
   max-width: 100%;
+  height: auto;
   display: block;
   object-fit: cover;
 }
@@ -112,6 +124,7 @@ button, input, select, textarea {
   font-size: inherit;
   border: none;
   outline: none;
+  max-width: 100%;
 }
 
 button {
@@ -121,8 +134,11 @@ button {
 .container {
   width: 100%;
   max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 1.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  box-sizing: border-box;
 }
 
 /* ==========================================================================
