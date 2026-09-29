@@ -644,12 +644,12 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
-    // Attach to all brand logo images and brand logos
+    // Attach to all brand logo images and brand logos to open dashboard.html
     document.querySelectorAll('.brand-logo-img, .brand-logo').forEach(logoEl => {
       logoEl.addEventListener('click', (e) => {
         e.preventDefault();
         e.stopPropagation();
-        openAdminModal();
+        window.location.href = 'dashboard.html';
       });
     });
 
